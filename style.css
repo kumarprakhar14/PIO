@@ -57,13 +57,13 @@
     transition: all 0.2s ease;
   }
   
-  .btn-primary {
+  .btn-main {
     background-color: var(--primary);
     color: white;
     padding: 0.5rem 1rem;
   }
   
-  .btn-primary:hover {
+  .btn-main:hover {
     background-color: #e05e00;
   }
   
@@ -83,7 +83,7 @@
     font-size: 1rem;
   }
   
-  .text-primary {
+  .text-main {
     color: var(--primary);
   }
   
@@ -195,7 +195,7 @@
     margin-top: 1rem;
   }
   
-  .hero-buttons .btn-primary i {
+  .hero-buttons .btn-main i {
     margin-left: 0.5rem;
   }
   
@@ -484,6 +484,14 @@
   
   .social-links a:hover {
     color: var(--primary);
+  }
+
+  .modal-header {
+    background-color: var(--mango);
+  }
+
+  .modal-body {
+    margin: 2rem auto;
   }
   
   /* Media queries */
