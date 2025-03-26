@@ -2,6 +2,7 @@
 :root {
     --primary: #ff6b00;
     --primary-light: rgba(255, 107, 0, 0.1);
+    --primary-dark: #e05e00;
     --mango: #ffb347;
     --litchi: #ffd3f8;
     --pineapple: #fedc56;
@@ -86,6 +87,11 @@
   .text-main {
     color: var(--primary);
   }
+
+  .required-field::after {
+    content: "*";
+    color: red;
+}
   
   .sr-only {
     position: absolute;
@@ -486,13 +492,165 @@
     color: var(--primary);
   }
 
-  .modal-header {
-    background-color: var(--mango);
+  
+  /* WhatsApp Form Modal Styling */
+  #whatsappFormModal .modal-content {
+    border-radius: var(--radius);
+    border: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   }
-
-  .modal-body {
-    margin: 2rem auto;
+  
+  #whatsappFormModal .modal-header {
+    background-color: var(--primary);
+    color: var(--background);
+    border-bottom: none;
+    border-radius: var(--radius) var(--radius) 0 0;
+    padding: 1rem 1.5rem;
   }
+  
+  #whatsappFormModal .modal-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+  
+  #whatsappFormModal .close {
+    color: var(--background);
+    opacity: 0.8;
+    text-shadow: none;
+    transition: opacity 0.2s ease;
+  }
+  
+  #whatsappFormModal .close:hover {
+    opacity: 1;
+  }
+  
+  #whatsappFormModal .modal-body {
+    padding: 1.5rem;
+  }
+  
+  #whatsappFormModal .form-group {
+    margin-bottom: 1.25rem;
+  }
+  
+  #whatsappFormModal label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--foreground);
+  }
+  
+  #whatsappFormModal .required-field::after {
+    content: "*";
+    color: var(--primary);
+    margin-left: 0.25rem;
+  }
+  
+  #whatsappFormModal .form-control {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--foreground);
+    background-color: var(--background);
+    background-clip: padding-box;
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) - 0.125rem);
+    transition: border-color 0.15s ease-in-out;
+  }
+  
+  #whatsappFormModal .form-control:focus {
+    border-color: var(--primary);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem var(--primary-light);
+  }
+  
+  #whatsappFormModal select.form-control {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    appearance: none;
+    padding-right: 2.5rem;
+  }
+  
+  #whatsappFormModal textarea.form-control {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  #whatsappFormModal .address-section {
+    background-color: var(--muted);
+    padding: 1.25rem;
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border);
+  }
+  
+  #whatsappFormModal .address-heading {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--foreground);
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  #whatsappFormModal .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+  }
+  
+  #whatsappFormModal .form-row > .form-group {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  
+  #whatsappFormModal .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  #whatsappFormModal .modal-footer {
+    border-top: none;
+    padding: 1rem 0 0 0;
+    justify-content: flex-end;
+  }
+  
+  #whatsappFormModal .btn {
+    font-weight: 500;
+    padding: 0.625rem 1.25rem;
+    border-radius: calc(var(--radius) - 0.125rem);
+    transition: all 0.2s ease;
+  }
+  
+  #whatsappFormModal .btn-outline {
+    background-color: transparent;
+    color: var(--muted-foreground);
+    border: 1px solid var(--border);
+  }
+  
+  #whatsappFormModal .btn-outline:hover {
+    background-color: var(--muted);
+  }
+  
+  #whatsappFormModal .btn-success {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--background);
+  }
+  
+  #whatsappFormModal .btn-success:hover {
+    background-color: var(
+      --primary-dark
+    ); /* Slightly darker than primary for hover */
+    border-color: var(--primary-dark);
+  }
+  
+  
   
   /* Media queries */
   @media (min-width: 640px) {
@@ -532,6 +690,20 @@
     .footer-content {
       flex-direction: row;
       justify-content: space-between;
+    }
+
+    #whatsappFormModal .col-md-6 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  
+    #whatsappFormModal .modal-footer {
+      flex-direction: column;
+    }
+  
+    #whatsappFormModal .modal-footer .btn {
+      width: 100%;
+      margin: 0.25rem 0;
     }
   }
   
