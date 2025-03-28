@@ -1,0 +1,73 @@
+
+:root {
+    --primary: #ff6b00;
+    --primary-light: rgba(255, 107, 0, 0.1);
+    --primary-dark: #e05e00;
+    --mango: #ffb347;
+    --litchi: #ffd3f8;
+    --pineapple: #fedc56;
+    --background: #ffffff;
+    --foreground: #0f172a;
+    --muted: #f8fafc;
+    --muted-foreground: #64748b;
+    --border: #e2e8f0;
+    --radius: 0.5rem;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    text-align: center;
+    padding: 50px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border-radius: var(--radius);
+    background-color: var(--muted);
+    box-shadow: 8px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: var(--primary);
+}
+
+p {
+    color: var(--muted-foreground);
+    font-size: 18px;
+}
+
+.section {
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: var(--radius);
+    background-color: var(--primary-light);
+}
+
+.order-online {
+    border-left: 5px solid var(--mango);
+}
+
+.find-store {
+    border-left: 5px solid var(--pineapple);
+}
+.btn-main {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+  }
+  
+  .btn-main:hover {
+    background-color: #e05e00;
+  }     
+
+.back-button{
+    position: absolute;
+top: 90px;
+left: 480px;
+display: flex;
+gap: 5px;
+}
