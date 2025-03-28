@@ -27,9 +27,9 @@
                 <a href="#"><img src="./assets/logo.png" alt="logo" height="70px" width="70px"></a>
             </div>
             <nav class="desktop-nav">
-                <a href="#products">Products</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <a class="nav-elem" href="#products">Products</a>
+                <a class="nav-elem" href="#about">About</a>
+                <a class="nav-elem" href="#contact">Contact</a>
             </nav>
             <div class="header-buttons">
                 <button class="btn-outline">Find a Store</button>
@@ -44,9 +44,9 @@
             </button>
         </div>
         <div class="mobile-menu" id="mobile-menu">
-            <a href="#products">Products</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a class="nav-elem" href="#products">Products</a>
+            <a class="nav-elem" href="#about">About</a>
+            <a class="nav-elem" href="#contact">Contact</a>
             <button class="btn-outline">Find a Store</button>
             <button class="btn-outline">Order Online</button>
             <button class="btn-main" data-toggle="modal" data-target="#whatsappFormModal">
@@ -225,6 +225,8 @@
                                     <option value="Mango">Mango Bliss</option>
                                     <option value="Pineapple">Pineapple Splash</option>
                                 </select>
+                                <label class="required-field" for="quantity">Quantity:</label>
+                                <input type="number" id="quantity" name="quantity" class="form-control" min="1" max="10" required/>
                             </div>
 
                             <div class="address-section">
@@ -290,6 +292,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/EasePack.min.js"></script>
+
+    <!-- gsap scrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
     <!-- bootstrap scripts -->

@@ -14,6 +14,56 @@ mobileLinks.forEach((link) => {
   });
 });
 
+// gsap nav animations
+
+function loadingAnimation(){
+
+  gsap.from(".header-container", {
+      y: -100,
+      opacity: 0,
+      delay: 0.2,
+      duration: 0.9, 
+      stagger: 0.1, 
+  })
+
+gsap.from(".hero-text", {
+    x: -100,
+    opacity: 0,
+    delay: 0.9,
+    duration: 1.12,
+    stagger: 0.2
+})
+
+gsap.from(".hero-visual", {
+  x: 100,
+  opacity: 0,
+  delay: 1.0,
+  duration: 1.12,
+  stagger: 0.2
+})
+}
+
+loadingAnimation()
+
+/* scrollTrigger */
+gsap.registerPlugin(ScrollTrigger);
+gsap.from(
+  ".products",
+  { opacity: 0, y: 50 },
+  {
+    opacity: 1,
+    y: 0,
+    duration: 1.5,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".products",
+      start: "top 80%", // Trigger when top of the box is 80% in view
+      end: "bottom 20%",
+      toggleActions: "play none none none",
+    },
+  }
+);
+
 
 // Modal form data submission
 function submitWhatsAppForm() {
@@ -24,6 +74,7 @@ function submitWhatsAppForm() {
     const name = document.getElementById('name').value;
     const cusPhoneNumber = document.getElementById('phoneNumber').value;
     const flavour = document.getElementById('flavour').value;
+    const quantity = document.getElementById('quantity').value;
     const house = document.getElementById('houseNo').value;
     const street = document.getElementById('street').value;
     const city = document.getElementById('city').value;
@@ -41,8 +92,8 @@ function submitWhatsAppForm() {
   ${zip}`;
   
     // Create pre-filled WhatsApp message
-    const whatsappMessage = `Hello,%20Here's my details:%0A%0AName: ${encodeURIComponent(name)}%0APhone Number: ${encodeURIComponent(cusPhoneNumber)}%0AAddress:%0A${encodeURIComponent(address)}%0AFlavour Selected: ${encodeURIComponent(flavour)}%0AMessage: ${encodeURIComponent(message)}%0AThank you!`; 
-    // %0A is URL encoded new line
+    const whatsappMessage = `Hello,%20Here's my details:%0A%0AName: ${encodeURIComponent(name)}%0APhone Number: ${encodeURIComponent(cusPhoneNumber)}%0AAddress:%0A${encodeURIComponent(address)}%0AFlavour Selected: ${encodeURIComponent(flavour)}%0AQuantity: ${encodeURIComponent(quantity)}%0AMessage: ${encodeURIComponent(message)}%0AThank you!`; 
+    // %0A is URI encoded new line
   
     /*
   URL Encoding (Percent Encoding)
