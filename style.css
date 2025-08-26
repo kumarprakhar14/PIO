@@ -47,6 +47,7 @@
   
   a:hover {
     color: var(--primary);
+    text-decoration: none;
   }
   
   button {
@@ -127,10 +128,6 @@
     align-items: center;
     gap: 0.5rem;
     font-weight: 700;
-  }
-  
-  .logo i {
-    color: var(--primary);
   }
   
   .desktop-nav {
